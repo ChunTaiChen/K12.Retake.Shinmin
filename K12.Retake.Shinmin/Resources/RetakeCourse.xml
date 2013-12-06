@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/xsl" href="format.xsl" ?>
+<ValidateRule Name="重補修課程資料">
+    <DuplicateDetection>
+        <Detector Name="組合鍵值">
+            <Field Name="課程名稱" />
+            <Field Name="學年度" />
+            <Field Name="學期" />
+            <Field Name="梯次" />
+        </Detector>
+    </DuplicateDetection>
+    <FieldList>
+
+        <Field Required="True" Name="課程名稱" Description="課程名稱">
+            <Validate AutoCorrect="False" Description="「課程名稱」不允許空白。" ErrorType="Error" Validator="不可空白" When="" />
+        </Field>
+
+        <Field Required="True" Name="學年度" Description="學年度">
+            <Validate AutoCorrect="False" Description="「學年度」不允許空白。" ErrorType="Error" Validator="不可空白" When="" />
+            <Validate AutoCorrect="False" Description="「學年度」必須是數字。" ErrorType="Error" Validator="Integer極限" When="" />
+        </Field>
+
+        <Field Required="True" Name="學期" Description="學期(1,2)">
+            <Validate AutoCorrect="False" Description="「學期」不允許空白。" ErrorType="Error" Validator="不可空白" When="" />
+            <Validate AutoCorrect="False" Description="「學期」只允許「1、2」。" ErrorType="Error" Validator="學期列舉" When="" />
+        </Field>
+
+        <Field Required="True" Name="梯次" Description="梯次(1~12)">
+            <Validate AutoCorrect="False" Description="「梯次」不允許空白。" ErrorType="Error" Validator="不可空白" When="" />
+            <Validate AutoCorrect="False" Description="「梯次」只允許「1至12」。" ErrorType="Error" Validator="梯次列舉" When="" />
+        </Field>
+
+        <Field Required="False" Name="科目類別" Description="科目類別。">
+        </Field>
+
+        <Field Required="False" Name="科別" Description="科別。">
+		<Validate AutoCorrect="False" Description="「科別」不存在系統中。" ErrorType="Error" Validator="科別名稱是否存在" When="" />
+        </Field>
+
+        <Field Required="False" Name="科目名稱" Description="科目名稱。">
+        </Field>
+
+        <Field Required="False" Name="學分數" Description="學分數。">
+	     <Validate AutoCorrect="False" Description="「學分數」必須是數字。" ErrorType="Error" Validator="Integer極限" When="" />
+        </Field>
+
+        <Field Required="False" EmptyAlsoValidate="false" Name="科目級別" Description="科目級別。">
+	     <Validate AutoCorrect="False" Description="「科目級別」必須是數字。" ErrorType="Error" Validator="Integer極限" When="" />
+        </Field>
+
+	<Field Required="False" EmptyAlsoValidate="false" Name="授課教師" Description="授課教師(暱稱)">
+            <Validate AutoCorrect="False" Description="「授課教師」不存在系統中。" ErrorType="Error" Validator="教師名稱是否存在" When="" />
+        </Field>
+
+    </FieldList>
+    <ValidatorList>
+        <RowValidator Name="課程鍵值是否存在" Type="CourseNameCheck"/>
+        <FieldValidator Name="教師名稱是否存在" Type="TeacherNameCheck"/>
+	<FieldValidator Name="科別名稱是否存在" Type="DepartmentNameCheck"/>
+        <FieldValidator Name="不可空白" Type="STRINGLENGTH">
+            <MinLength>1</MinLength>
+        </FieldValidator>
+        
+        <FieldValidator Name="Integer極限" Type="Integer">
+            <MinValue>0</MinValue>
+            <MaxValue>2000000000</MaxValue>
+        </FieldValidator>
+        
+        <FieldValidator Name="學期列舉" Type="Enumeration">
+            <Item Value="1" />
+            <Item Value="2" />
+            <Item Value="3" />
+            <Item Value="4" />
+        </FieldValidator>
+
+        <FieldValidator Name="梯次列舉" Type="Enumeration">
+            <Item Value="1" />
+            <Item Value="2" />
+            <Item Value="3" />
+            <Item Value="4" />
+            <Item Value="5" />
+            <Item Value="6" />
+            <Item Value="7" />
+            <Item Value="8" />
+            <Item Value="9" />
+            <Item Value="10" />
+            <Item Value="11" />
+            <Item Value="12" />
+        </FieldValidator>
+
+        <FieldValidator Name="只能為是列舉" Type="Enumeration">
+            <Item Value="是">
+                <Variation>TRUE</Variation>
+                <Variation>True</Variation>
+                <Variation>true</Variation>
+                <Variation>YES</Variation>
+                <Variation>Yes</Variation>
+                <Variation>yes</Variation>
+                <Variation>Y</Variation>
+                <Variation>y</Variation>
+            </Item>
+            <Item Value="">
+                <Variation>否</Variation>
+                <Variation>FALSE</Variation>
+                <Variation>False</Variation>
+                <Variation>false</Variation>
+                <Variation>NO</Variation>
+                <Variation>No</Variation>
+                <Variation>no</Variation>
+                <Variation>N</Variation>
+                <Variation>n</Variation>
+            </Item>
+        </FieldValidator>
+
+    </ValidatorList>
+    <RowValidate>
+        <Validate AutoCorrect="False" Description="「課程名稱」、「學年度」、「學期」、「梯次」組合不存在系統，此筆將新增。" ErrorType="Warning" Validator="課程鍵值是否存在" When=""/>
+    </RowValidate>
+    <ConditionList />
+</ValidateRule>

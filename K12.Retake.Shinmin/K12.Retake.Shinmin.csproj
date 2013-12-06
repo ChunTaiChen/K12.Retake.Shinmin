@@ -1,0 +1,533 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5786107C-67FD-4905-B667-A5E94F7ED50A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>K12.Retake.Shinmin</RootNamespace>
+    <AssemblyName>K12.Retake.Shinmin</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Cells, Version=4.3.0.0, Culture=neutral, PublicKeyToken=9a40d5a4b59e5256, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\Aspose.Cells.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Aspose.Words, Version=4.4.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\Aspose.Words.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Campus.Configuration, Version=1.0.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\Campus.Configuration.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Campus.DocumentValidator">
+      <HintPath>..\..\..\..\ischool_Senior with FISCA\FiscaRuntime\modules\Campus\Campus.DocumentValidator.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Campus.Import">
+      <HintPath>..\..\..\..\ischool_Senior with FISCA\FiscaRuntime\modules\Campus\Campus.Import.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Campus.Report, Version=1.0.0.11, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\Campus.Report.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Campus.Validator">
+      <HintPath>..\..\..\..\ischool_Senior with FISCA\FiscaRuntime\modules\Campus\Campus.Validator.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Campus.Windows, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\Campus.Windows.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=9.5.0.1, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="FISCA, Version=2.1.3.12, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\FISCA.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FISCA.Authentication, Version=1.9.0.11, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\FISCA.Authentication.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FISCA.Data, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\FISCA.Data.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FISCA.DSAClient, Version=1.0.1.14, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\FISCA.DSAClient.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FISCA.DSAUtil, Version=3.9.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\FISCA.DSAUtil.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FISCA.Permission, Version=1.1.0.11, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\FISCA.Permission.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FISCA.Presentation, Version=1.1.0.16, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\FISCA.Presentation.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FISCA.UDT, Version=1.0.2.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\FISCA.UDT.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="K12.Data, Version=1.9.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\K12.Data.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="K12.Presentation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\K12.Presentation.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SmartSchool.Customization.Data, Version=1.3.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\SmartSchool.Customization.Data.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAO\CourseTableDept.cs" />
+    <Compile Include="DAO\GraduationPlanSubject.cs" />
+    <Compile Include="DAO\ISubjecAdd.cs" />
+    <Compile Include="DAO\QueryData.cs" />
+    <Compile Include="DAO\rpt_StudentInfo.cs" />
+    <Compile Include="DAO\StudentCourseSelect.cs" />
+    <Compile Include="DAO\StudentItem.cs" />
+    <Compile Include="DAO\StudentPassGroup.cs" />
+    <Compile Include="DAO\StudentResult.cs" />
+    <Compile Include="DAO\SubjectCourseBase.cs" />
+    <Compile Include="DAO\SubjectCourseStudentBase.cs" />
+    <Compile Include="DAO\SubjectDatePeriod.cs" />
+    <Compile Include="DAO\SuggestSubjectCount.cs" />
+    <Compile Include="DAO\UDTAttendanceDef.cs" />
+    <Compile Include="DAO\UDTCourseDef.cs" />
+    <Compile Include="DAO\UDTCourseTimetableDef.cs" />
+    <Compile Include="DAO\UDTCdselectDef.cs" />
+    <Compile Include="DAO\UDTExamDef.cs" />
+    <Compile Include="DAO\UDTFailSubjectListDef.cs" />
+    <Compile Include="DAO\UDTScselectDef.cs" />
+    <Compile Include="DAO\UDTSsselectDef.cs" />
+    <Compile Include="DAO\UDTSubjectDef.cs" />
+    <Compile Include="DAO\UDTSuggestListDef.cs" />
+    <Compile Include="DAO\UDTTimeListDef.cs" />
+    <Compile Include="DAO\UDTTimeSectionDef.cs" />
+    <Compile Include="DAO\UDTTransfer.cs" />
+    <Compile Include="DAO\UDTWeightProportionDef.cs" />
+    <Compile Include="DetailContent\CourseTimeSectionViewContent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DetailContent\CourseTimeSectionViewContent.Designer.cs">
+      <DependentUpon>CourseTimeSectionViewContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dylan\AttendanceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dylan\AttendanceForm.Designer.cs">
+      <DependentUpon>AttendanceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dylan\AttendanceMeg.cs" />
+    <Compile Include="Dylan\AttendanceRow.cs" />
+    <Compile Include="Dylan\ReSetSubjectDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dylan\ReSetSubjectDate.Designer.cs">
+      <DependentUpon>ReSetSubjectDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dylan\phChangeData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dylan\phChangeData.Designer.cs">
+      <DependentUpon>phChangeData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dylan\ReSetSubjectDateStep2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dylan\ReSetSubjectDateStep2.Designer.cs">
+      <DependentUpon>ReSetSubjectDateStep2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dylan\RetakeJoinForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dylan\RetakeJoinForm.designer.cs">
+      <DependentUpon>RetakeJoinForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dylan\ResultsInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dylan\ResultsInputForm.designer.cs">
+      <DependentUpon>ResultsInputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dylan\UDTScoreInputDateDef.cs" />
+    <Compile Include="Dylan\UDTSelectCourseDateDef.cs" />
+    <Compile Include="DetailContent\CourseInfoContent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DetailContent\CourseInfoContent.Designer.cs">
+      <DependentUpon>CourseInfoContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetailContent\CourseStudentContent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DetailContent\CourseStudentContent.Designer.cs">
+      <DependentUpon>CourseStudentContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\AddCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\AddCourse.Designer.cs">
+      <DependentUpon>AddCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\AddTimeListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\AddTimeListForm.Designer.cs">
+      <DependentUpon>AddTimeListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\ClearingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ClearingForm.Designer.cs">
+      <DependentUpon>ClearingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\CourseTimetableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\CourseTimetableForm.Designer.cs">
+      <DependentUpon>CourseTimetableForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\CreateCourseInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\CreateCourseInfoForm.designer.cs">
+      <DependentUpon>CreateCourseInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\GradingProjectConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\GradingProjectConfigForm.Designer.cs">
+      <DependentUpon>GradingProjectConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\RetakeResultsInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\RetakeResultsInputForm.Designer.cs">
+      <DependentUpon>RetakeResultsInputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\SetCourseInfoDateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\SetCourseInfoDateForm.designer.cs">
+      <DependentUpon>SetCourseInfoDateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\StudentNotExamSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\StudentNotExamSearchForm.Designer.cs">
+      <DependentUpon>StudentNotExamSearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\StudentNotExamSearchForm_Sub1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\StudentNotExamSearchForm_Sub1.Designer.cs">
+      <DependentUpon>StudentNotExamSearchForm_Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\SubAddEditCourseTimetableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\SubAddEditCourseTimetableForm.Designer.cs">
+      <DependentUpon>SubAddEditCourseTimetableForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\SubAddSubjectDateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\SubAddSubjectDateForm.Designer.cs">
+      <DependentUpon>SubAddSubjectDateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\SubjectListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\SubjectListForm.Designer.cs">
+      <DependentUpon>SubjectListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\SuggestListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\SuggestListForm.Designer.cs">
+      <DependentUpon>SuggestListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\SuggestSubjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\SuggestSubjectForm.Designer.cs">
+      <DependentUpon>SuggestSubjectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global.cs" />
+    <Compile Include="ImportExport\CourseScore.cs" />
+    <Compile Include="ImportExport\ExportCourseScore.cs" />
+    <Compile Include="ImportExport\ExportStudentCourseSelect.cs" />
+    <Compile Include="ImportExport\ImportSCAttend.cs" />
+    <Compile Include="ImportExport\ImportCourse.cs" />
+    <Compile Include="ImportExport\ValidationRule\StudentNumberCheck.cs" />
+    <Compile Include="ImportExport\ValidationRule\CourseNameCheck.cs" />
+    <Compile Include="ImportExport\ValidationRule\DepartmentNameCheck.cs" />
+    <Compile Include="ImportExport\ValidationRule\FieldValidatorFactory.cs" />
+    <Compile Include="ImportExport\ValidationRule\RowValidatorFactory.cs" />
+    <Compile Include="ImportExport\ValidationRule\TeacherNameCheck.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\CourseAttendanceRpt.cs" />
+    <Compile Include="Report\CourseStudentAttendReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\CourseStudentAttendReportForm.Designer.cs">
+      <DependentUpon>CourseStudentAttendReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\CourseStudentSCReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\CourseStudentSCReportForm.Designer.cs">
+      <DependentUpon>CourseStudentSCReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\StudentAttendanceReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\StudentAttendanceReportForm.Designer.cs">
+      <DependentUpon>StudentAttendanceReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\StudentCourseAttendanceRptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\StudentCourseAttendanceRptForm.Designer.cs">
+      <DependentUpon>StudentCourseAttendanceRptForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\StudentPassReport.cs" />
+    <Compile Include="RetakeAdmin.cs" />
+    <Compile Include="RetakeEvents.cs" />
+    <Compile Include="RetakeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RetakeView.Designer.cs">
+      <DependentUpon>RetakeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Library\Aspose.Cells.dll" />
+    <Content Include="Library\Aspose.Words.dll" />
+    <Content Include="Library\Campus.Configuration.dll" />
+    <Content Include="Library\Campus.Configuration.pdb" />
+    <Content Include="Library\Campus.DocumentValidator.dll" />
+    <Content Include="Library\Campus.Import.dll" />
+    <Content Include="Library\Campus.Report.dll" />
+    <Content Include="Library\Campus.Validator.dll" />
+    <Content Include="Library\Campus.Windows.dll" />
+    <Content Include="Library\DevComponents.DotNetBar2.dll" />
+    <Content Include="Library\FISCA.Authentication.dll" />
+    <Content Include="Library\FISCA.Data.dll" />
+    <Content Include="Library\FISCA.dll" />
+    <Content Include="Library\FISCA.DSAClient.dll" />
+    <Content Include="Library\FISCA.DSAClient.pdb" />
+    <Content Include="Library\FISCA.DSAClient.xml" />
+    <Content Include="Library\FISCA.DSAUtil.dll" />
+    <Content Include="Library\FISCA.DSAUtil.pdb" />
+    <Content Include="Library\FISCA.DSAUtil.xml" />
+    <Content Include="Library\FISCA.Permission.dll" />
+    <Content Include="Library\FISCA.Presentation.dll" />
+    <Content Include="Library\FISCA.UDT.dll" />
+    <Content Include="Library\K12.Data.dll" />
+    <Content Include="Library\K12.Presentation.dll" />
+    <Content Include="Library\SmartSchool.Customization.Data.dll" />
+    <Content Include="Library\SmartSchool.Customization.Data.xml" />
+    <None Include="Resource\time_frame_refresh_128.png" />
+    <None Include="Resource\desk_64.png" />
+    <None Include="Resource\subject_del.png" />
+    <None Include="Resources\Import.Image.png" />
+    <None Include="Resources\RetakeSCAttend.xml" />
+    <None Include="Resources\RetakeCourse.xml" />
+    <None Include="Resources\lesson_planning_clock_64.png" />
+    <Content Include="Resources\刪除課程.png" />
+    <Content Include="Resources\匯出.png" />
+    <Content Include="Resources\新增課程 .png" />
+    <Content Include="Resource\barchart_64.png" />
+    <Content Include="Resource\brand_write_64.png" />
+    <Content Include="Resource\marker_fav_64.png" />
+    <Content Include="Resource\Report.png" />
+    <Content Include="Resource\開課.png" />
+    <Content Include="Resource\建議重補修名單_filter_data_add_64.png" />
+    <Content Include="Resource\重補修科目管理_project_64.png" />
+    <Content Include="Resource\重補修課表管理_schedule_write_64.png" />
+    <None Include="Template\及格人數樣板.xls" />
+    <None Include="Template\學生選課清單.xls" />
+    <None Include="Template\學生重補修缺曠通知單扣考範本.doc" />
+    <None Include="Template\學生重補修缺曠通知單範本.doc" />
+    <None Include="Template\缺曠通知單學生名單範本.xls" />
+    <None Include="Template\缺曠通知單範本.doc" />
+    <None Include="Template\課程缺曠名單樣板.xls" />
+    <None Include="Template\課程點名單樣板.xls" />
+    <None Include="Template\重補修課程缺曠樣板.doc" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DetailContent\CourseTimeSectionViewContent.resx">
+      <DependentUpon>CourseTimeSectionViewContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dylan\AttendanceForm.resx">
+      <DependentUpon>AttendanceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dylan\ReSetSubjectDate.resx">
+      <DependentUpon>ReSetSubjectDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dylan\phChangeData.resx">
+      <DependentUpon>phChangeData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dylan\ReSetSubjectDateStep2.resx">
+      <DependentUpon>ReSetSubjectDateStep2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dylan\RetakeJoinForm.resx">
+      <DependentUpon>RetakeJoinForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dylan\ResultsInputForm.resx">
+      <DependentUpon>ResultsInputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailContent\CourseInfoContent.resx">
+      <DependentUpon>CourseInfoContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailContent\CourseStudentContent.resx">
+      <DependentUpon>CourseStudentContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\AddCourse.resx">
+      <DependentUpon>AddCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\AddTimeListForm.resx">
+      <DependentUpon>AddTimeListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ClearingForm.resx">
+      <DependentUpon>ClearingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\CourseTimetableForm.resx">
+      <DependentUpon>CourseTimetableForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\CreateCourseInfoForm.resx">
+      <DependentUpon>CreateCourseInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\GradingProjectConfigForm.resx">
+      <DependentUpon>GradingProjectConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\RetakeResultsInputForm.resx">
+      <DependentUpon>RetakeResultsInputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\SetCourseInfoDateForm.resx">
+      <DependentUpon>SetCourseInfoDateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\StudentNotExamSearchForm.resx">
+      <DependentUpon>StudentNotExamSearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\StudentNotExamSearchForm_Sub1.resx">
+      <DependentUpon>StudentNotExamSearchForm_Sub1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\SubAddEditCourseTimetableForm.resx">
+      <DependentUpon>SubAddEditCourseTimetableForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\SubAddSubjectDateForm.resx">
+      <DependentUpon>SubAddSubjectDateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\SubjectListForm.resx">
+      <DependentUpon>SubjectListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\SuggestListForm.resx">
+      <DependentUpon>SuggestListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\SuggestSubjectForm.resx">
+      <DependentUpon>SuggestSubjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CourseStudentAttendReportForm.resx">
+      <DependentUpon>CourseStudentAttendReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CourseStudentSCReportForm.resx">
+      <DependentUpon>CourseStudentSCReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\StudentAttendanceReportForm.resx">
+      <DependentUpon>StudentAttendanceReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\StudentCourseAttendanceRptForm.resx">
+      <DependentUpon>StudentCourseAttendanceRptForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RetakeView.resx">
+      <DependentUpon>RetakeView.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
